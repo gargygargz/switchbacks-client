@@ -16,11 +16,11 @@
 <body data-spy="scroll">
   <!-- The video -->
   <video autoplay muted loop id="myVideo">
-    <source src="public/leaves.mp4" type="video/mp4">
+    <source src="public/leaves2.mp4" type="video/mp4">
   </video>
   <div id="overlay" class="container">
     <div class="row title">
-      <h1>Switchbacks Trail Tracker</h1>
+      <h1><strong>Switchbacks Trail Tracker</strong></h1>
     </div>
     <div class="flex-grid">
       <aside class="col-3 sidebar">
@@ -37,7 +37,7 @@
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="signUpLabel">Sign Up</h5>
+                  <h3 class="modal-title" id="signUpLabel">Sign Up</h3>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -65,7 +65,7 @@
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="signInLabel">Sign In</h5>
+                  <h3 class="modal-title" id="signInLabel">Sign In</h3>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
                   </button>
                 </div>
@@ -76,7 +76,6 @@
                       placeholder="Enter Password">
                     <button class="btn">Sign In!</button>
                   </form>
-                  <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
                 </div>
               </div>
             </div>
@@ -97,7 +96,7 @@
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="changePasswordLabel">Change Password</h5>
+                  <h3 class="modal-title" id="changePasswordLabel">Change Password</h3>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
                   </button>
                 </div>
@@ -152,7 +151,7 @@
                 </div>
                 <div class="modal-body">
                   <form id="showHikeForm">
-                    Which hike would you like to look up?</br>
+                    Enter the ID of the hike you would like to look up.<br>
                     <input type="text" name="hike[id]"><br />
                     <button class="btn" type="submit" id="show-hike-submit">Submit</button>
                   </form>
@@ -189,18 +188,18 @@
                     <br>
                     <h4>Updated Information:</h4>
                     Name: <input type="text" name="hike[name]"
-                      placeholder="Ex: Big Trees Trail"><br />
+                      placeholder="Eg: Big Trees Trail"><br />
                     Location: <input type="text" name="hike[location]"
-                      placeholder="Ex: Oakland, CA"><br />
+                      placeholder="Eg: Oakland, CA"><br />
                     Distance: <input type="text" name="hike[distance]"
-                      placeholder="Ex: 5 miles"><br />
+                      placeholder="Eg: 5 miles"><br />
                     Duration: <input type="text" name="hike[duration]"
-                      placeholder="Ex: 2 hours"><br />
+                      placeholder="Eg: 2 hours"><br />
                     Difficulty: <input type="text" name="hike[difficulty]"
-                      placeholder="Ex: easy, moderate, hard"> <br />
+                      placeholder="Easy, med, or hard"> <br />
                     Rating: <input type="text" name="hike[rating]"
-                      placeholder="Ex: meh, decent, damn good, spectacular"><br />
-                    Notes: <input type="text" name="hike[notes]" placeholder="Amazing views, steep trail."><br />
+                      placeholder="Out of 10"><br />
+                    Notes: <input type="text" name="hike[notes]" placeholder="Eg: Amazing views"><br />
                     <br>
                     <br>
                     <button class="btn" type="submit" id="create-hike-submit">Submit</button>
@@ -252,7 +251,7 @@
         <!-- Button trigger modal -->
         <div class="create-hike">
           <button type="button" class="btn btn-primary btn-block" data-bs-toggle="modal" data-bs-target="#createHike">
-            <strong>Just went on a hike? Track your trail here!</strong>
+            <strong>Just return from an epic hike? Track your favorite trails here!</strong>
           </button>
           <!-- Modal -->
           <div class="modal fade" id="createHike" tabindex="-1" aria-labelledby="createHikeTitle"
@@ -260,7 +259,7 @@
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="createHikeTitle">New Hike</h5>
+                  <h3 class="modal-title" id="createHikeTitle">New Hike</h3>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
                   </button>
                 </div>
@@ -271,16 +270,16 @@
                   <h4 class="form-title"> Hike Details: </h4>
                   <form id="hike-info">
                     Name: <span class="required field">*</span> <input type="text" name="hike[name]"
-                      placeholder="Ex: Big Trees Trail"><br />
+                      placeholder="Eg: Big Trees Trail"><br />
                     Location: <span class="required field">*</span> <input type="text" name="hike[location]"
-                      placeholder="Ex: Oakland, CA"><br />
+                      placeholder="Eg: Oakland, CA"><br />
                     Distance: <span class="required field">*</span> <input type="text" name="hike[distance]"
-                      placeholder="Ex: 5 miles"><br />
+                      placeholder="Eg: 5 miles"><br />
                     Duration: <span class="required field">*</span> <input type="text" name="hike[duration]"
-                      placeholder="Ex: 2 hours"><br />
-                    Difficulty: <span class="required field">*</span> <input type="text" name="hike[difficulty]" placeholder="Ex: easy, moderate, hard"> <br />
-                    Rating: <span class="required field">*</span> <input type="text" name="hike[rating]" placeholder="Ex: meh, decent, damn good, spectacular"><br />
-                    Notes: <input type="text" name="hike[notes]" placeholder="Amazing views, steep trail."><br />
+                      placeholder="Eg: 2 hours"><br />
+                    Difficulty: <span class="required field">*</span> <input type="text" name="hike[difficulty]" placeholder="Easy, med, or hard"> <br />
+                    Rating: <span class="required field">*</span> <input type="text" name="hike[rating]" placeholder="Out of 10"><br />
+                    Notes: <input type="text" name="hike[notes]" placeholder="Eg: Amazing views"><br />
                     <br>
                     <br>
                     <button class="btn" type="submit" id="create-hike-submit">Submit</button>
@@ -293,11 +292,12 @@
         </div>
 
         <div class="background-info">
-          <h5>hike</h5>
+          <h3>hike</h3>
           <p>/hīk/ <em>noun</em> <br>
           a long walk, especially in the country or wilderness.</p>
-          <p>Track all your trails with Switchbacks.<br>
-          Create an account to get started.</p>
+          <p>Track all your trails and hikes with Switchbacks.</p>
+          <p>“Jumping from boulder to boulder and never falling, with a heavy pack, is easier than it sounds; you just can't fall
+          when you get into the rhythm of the dance.” ~ Kerouac</p>
         </div>
                     <!-- This div will initially be empty, but if an error occurs, 
                                         we will show it here -->
