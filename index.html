@@ -1,17 +1,322 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Example</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<head>
+  <title>Switchbacks Trail Tracker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `script` tags-->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body>
-      <h1>Browser Template</h1>
-    </body>
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body data-spy="scroll">
+  <!-- The video -->
+  <video autoplay muted loop id="myVideo">
+    <source src="public/leaves.mp4" type="video/mp4">
+  </video>
+  <div id="overlay" class="container">
+    <div class="row title">
+      <h1>Switchbacks Trail Tracker</h1>
+    </div>
+    <div class="flex-grid">
+      <aside class="col-3 sidebar">
+
+        <!--SIGN UP-->
+        <div class="sign-up">
+          <h5> New User? </h5>
+          <!-- Click on Modal Button -->
+          <button type="button" class="btn btn-primary btn-block" data-bs-toggle="modal" data-bs-target="#signUp">
+            Sign Up Now
+          </button>
+          <!-- Sign Up Modal -->
+          <div class="modal fade" id="signUp" tabindex="-1" aria-labelledby="signUpLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="signUpLabel">Sign Up</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form id="signUpForm">
+                    <input type="email" name="credentials[email]" placeholder="Enter Email">
+                    <input type="password" name="credentials[password]" placeholder="Enter Password">
+                    <input type="password" name="credentials[password_confirmation]" placeholder="Enter Password Again"><br>
+                    <button class="btn">Sign Up!</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+        </div>
+        </div>
+
+        <!--SIGN IN-->
+        <div class="sign-in">
+          <h5> Returning User? </h5>
+          <!-- Sign In Modal Button -->
+          <button type="button" class="btn btn-primary btn-block" data-bs-toggle="modal" data-bs-target="#signIn">
+            Sign In Now
+          </button>
+          <!-- Modal -->
+          <div class="modal fade" id="signIn" tabindex="-1" aria-labelledby="signInLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="signInLabel">Sign In</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form id="signInForm">
+                    <input class="sign-in-start" type="email" name="credentials[email]" placeholder="Enter Email">
+                    <input class="sign-in-start" type="password" name="credentials[password]"
+                      placeholder="Enter Password">
+                    <button class="btn">Sign In!</button>
+                  </form>
+                  <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--ends sign in modal-->
+        </div>
+        <!--ends sign in-->
+        
+    
+        <!--CHANGE PASSWORD-->
+        <div class="change-password">
+          <!-- Change PW Modal Button -->
+          <button type="button" class="btn btn-primary btn-block" data-bs-toggle="modal" data-bs-target="#changePassword">
+            Change Password
+          </button>
+          <!-- Modal -->
+          <div class="modal fade" id="changePassword" tabindex="-1" aria-labelledby="changePasswordLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="changePasswordLabel">Change Password</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form id="changePasswordForm">
+                    <input type="password" name="passwords[old]" placeholder="Enter Old Password">
+                    <input type="password" name="passwords[new]" placeholder="Enter New Password">
+                    <button class="btn" type="submit">Change Password!</button>
+                  </form>
+                  <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--ends change password modal-->
+        </div>
+        <!--ends change password-->
+
+        <!--sign out-->
+        <div>
+          <form id="sign-out">
+            <button class="btn btn-block">Sign Out!</button>
+          </form>
+        </div>
+
+        <!--Getting all of MY hikes modal-->
+        <div class="expand-to-height-of-child">
+          <button class="get-my-hikes btn btn-block">See My Hikes</button>
+        </div>
+
+        <!--Getting all hikes modal-->
+        <div class="expand-to-height-of-child">
+          <button class="get-all-hikes btn btn-block">See All Hikes</button>
+        </div>
+
+        <!--Show Hike-->
+        <div class="show-hike">
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-primary btn-block" data-bs-toggle="modal" data-bs-target="#showHike">
+            Find a Hike
+          </button>
+
+          <!-- Modal Show Hike -->
+          <div class="modal fade" id="showHike" tabindex="-1" aria-labelledby="showHikeLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="showHikeLabel">Find a Hike</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form id="showHikeForm">
+                    Which hike would you like to look up?</br>
+                    <input type="text" name="hike[id]"><br />
+                    <button class="btn" type="submit" id="show-hike-submit">Submit</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--Update Hike-->
+        <div class="update-hike">
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-primary btn-block" data-bs-toggle="modal" data-bs-target="#updateHike">
+            Update a Hike
+          </button>
+
+          <!-- Modal Update Hike -->
+          <div class="modal fade" id="updateHike" tabindex="-1" aria-labelledby="updateExampleLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="updateHikeLabel">Update a Hike</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <div>
+                    <h6><span>* = Required Field</span></h6>
+                  </div>
+                  <form id="updateHikeForm">
+                    Which hike would you like to update?<br>
+                    Hike ID: <span class="required field">*</span> <input type="text" name="hike[id]" min="0" step="1"><br />
+                    <br>
+                    <h4>Updated Information:</h4>
+                    Name: <input type="text" name="hike[name]"
+                      placeholder="Ex: Big Trees Trail"><br />
+                    Location: <input type="text" name="hike[location]"
+                      placeholder="Ex: Oakland, CA"><br />
+                    Distance: <input type="text" name="hike[distance]"
+                      placeholder="Ex: 5 miles"><br />
+                    Duration: <input type="text" name="hike[duration]"
+                      placeholder="Ex: 2 hours"><br />
+                    Difficulty: <input type="text" name="hike[difficulty]"
+                      placeholder="Ex: easy, moderate, hard"> <br />
+                    Rating: <input type="text" name="hike[rating]"
+                      placeholder="Ex: meh, decent, damn good, spectacular"><br />
+                    Notes: <input type="text" name="hike[notes]" placeholder="Amazing views, steep trail."><br />
+                    <br>
+                    <br>
+                    <button class="btn" type="submit" id="create-hike-submit">Submit</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--Delete Hike-->
+        <div class="delete-hike">
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-primary btn-block" data-bs-toggle="modal" data-bs-target="#deleteHike">
+            Delete a Hike
+          </button>
+
+          <!-- Modal Delete Hike -->
+          <div class="modal fade" id="deleteHike" tabindex="-1" aria-labelledby="deleteExampleLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="deleteHikeLabel">Delete a Hike</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form id="deleteHikeForm">
+                    Which hike would you like to delete?<br>
+                    <input type="text" name="hike[id]"><br />
+                    <button class="btn" type="submit" id="delete-hike-submit">Submit</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--Message Center-->
+        <section>
+          <div id="error-message"></div>
+          <div id="success-message"></div>
+        </section>
+      </aside>
+      <!--ends column-->
+
+      <div class="col-9 main">
+        <!-- Button trigger modal -->
+        <div class="create-hike">
+          <button type="button" class="btn btn-primary btn-block" data-bs-toggle="modal" data-bs-target="#createHike">
+            <strong>Just went on a hike? Track your trail here!</strong>
+          </button>
+          <!-- Modal -->
+          <div class="modal fade" id="createHike" tabindex="-1" aria-labelledby="createHikeTitle"
+            aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="createHikeTitle">New Hike</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <div>
+                    <h6><span>* = Required Field</span></h6>
+                  </div>
+                  <h4 class="form-title"> Hike Details: </h4>
+                  <form id="hike-info">
+                    Name: <span class="required field">*</span> <input type="text" name="hike[name]"
+                      placeholder="Ex: Big Trees Trail"><br />
+                    Location: <span class="required field">*</span> <input type="text" name="hike[location]"
+                      placeholder="Ex: Oakland, CA"><br />
+                    Distance: <span class="required field">*</span> <input type="text" name="hike[distance]"
+                      placeholder="Ex: 5 miles"><br />
+                    Duration: <span class="required field">*</span> <input type="text" name="hike[duration]"
+                      placeholder="Ex: 2 hours"><br />
+                    Difficulty: <span class="required field">*</span> <input type="text" name="hike[difficulty]" placeholder="Ex: easy, moderate, hard"> <br />
+                    Rating: <span class="required field">*</span> <input type="text" name="hike[rating]" placeholder="Ex: meh, decent, damn good, spectacular"><br />
+                    Notes: <input type="text" name="hike[notes]" placeholder="Amazing views, steep trail."><br />
+                    <br>
+                    <br>
+                    <button class="btn" type="submit" id="create-hike-submit">Submit</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--ends modal-->
+        </div>
+
+        <div class="background-info">
+          <h5>hike</h5>
+          <p>/hīk/ <em>noun</em> <br>
+          a long walk, especially in the country or wilderness.</p>
+          <p>Track all your trails with Switchbacks.<br>
+          Create an account to get started.</p>
+        </div>
+                    <!-- This div will initially be empty, but if an error occurs, 
+                                        we will show it here -->
+        <div id="error-message2"></div>
+                    <!-- This div will initially be empty, but we will display info we got back from the API here -->
+        <div id="hikes-display"></div>
+        <section>
+
+        </section>
+          <p></p>
+        </div>
+      </div>
+      <!--ends column-->
+    </div>
+    <!--ends row-->
+    <footer>
+      Created by Greg Schaefer
+    </footer>
+  </div>
+  <!--ends container-->
+  </body>
 </html>
