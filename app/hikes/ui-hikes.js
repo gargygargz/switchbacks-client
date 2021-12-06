@@ -3,7 +3,7 @@ const onCreateHikeSuccess = function (responseData) {
   const hike = responseData.hike
   console.log(responseData)
 
-  // create the html to display a single book
+  // create the html to display a single hike
   const hikeHtml = `
     <div>
       <p>Name: ${hike.name}<p>
@@ -66,7 +66,7 @@ const onGetMyHikesSuccess = function (responseData) {
 
   // loop over all of the hikes
   hikes.forEach((hike) => {
-    // add html for each book, to the booksHtml variable
+    // add html for each hike, to the hikesHtml variable
     hikesHtml += `
       <div>
         <p>Name: ${hike.name}</p>
@@ -133,7 +133,7 @@ const onGetAllHikesSuccess = function (responseData) {
 
   // loop over all of the hikes
   hikes.forEach((hike) => {
-    // add html for each book, to the booksHtml variable
+    // add html for each hike, to the hikesHtml variable
     hikesHtml += `
       <div>
         <p>Name: ${hike.name}</p>
@@ -254,7 +254,7 @@ const onUpdateHikeSuccess = function () {
 
   // after 5 seconds (5000 milliseconds), run our callback function
   setTimeout(() => {
-    // remove the message from books-display
+    // remove the message from hikes-display
     $('#hikes-display').html('')
     // remove the green color causes by `text-success`
     $('#hikes-display').removeClass('text-success')

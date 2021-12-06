@@ -6,8 +6,6 @@ const onSignUpSuccess = function (responseData) {
   // remove existing classes, then add a green text-success class from bootstrap
   $('#success-message').removeClass()
   $('#success-message').addClass('text-success')
-  // clear (reset) all of the forms
-  $('#signUpForm').trigger('reset')
   console.log('responseData is', responseData)
 
   setTimeout(() => {
@@ -16,6 +14,9 @@ const onSignUpSuccess = function (responseData) {
     // remove the green color caused by `text-success`
     $('#success-message').removeClass('text-success')
   }, 5000)
+
+  // clear (reset) all of the forms
+  $('#signUpForm').trigger('reset')
 }
 
 const onSignUpFailure = function (error) {
@@ -43,9 +44,10 @@ const onSignInSuccess = function (responseData) {
   // remove existing classes, then add a green text-success class from bootstrap
   $('#success-message').removeClass()
   $('#success-message').addClass('text-success')
+  $('#sign-out, .change-password, .get-my-hikes, .get-all-hikes, .show-hike, .update-hike, .delete-hike, .create-hike').css('display', 'block')
+  $('.sign-up').hide()
   // clear (reset) all of the forms
   $('#signInForm').trigger('reset')
-  $('#sign-out, .change-password, .get-my-hikes, .get-all-hikes, .show-hike, .update-hike, .delete-hike, .create-hike').css('display', 'block')
 }
 
 const onSignInFailure = function (error) {
@@ -71,8 +73,6 @@ const onChangePasswordSuccess = function (responseData) {
   // remove existing classes, then add a green text-success class from bootstrap
   $('#success-message').removeClass()
   $('#success-message').addClass('text-success')
-  // clear (reset) all of the forms
-  $('#changePasswordForm').trigger('reset')
   console.log('responseData is', responseData)
 
   setTimeout(() => {
@@ -81,6 +81,9 @@ const onChangePasswordSuccess = function (responseData) {
     // remove the green color caused by `text-success`
     $('#success-message').removeClass('text-success')
   }, 5000)
+
+  // clear (reset) all of the forms
+  $('#changePasswordForm').trigger('reset')
 }
 
 const onChangePasswordFailure = function (error) {
@@ -111,7 +114,7 @@ const onSignOutSuccess = function (responseData) {
   ).trigger('reset')
   $('.sign-up, .sign-in, .background-info').show()
   $(
-    '#sign-out, .change-password, .get-my-hikes, .get-all-hikes, .show-hike, .update-hike, .delete-hike, .create-hike'
+    '#sign-out, #hikes-display, .change-password, .get-my-hikes, .get-all-hikes, .show-hike, .update-hike, .delete-hike, .create-hike'
   ).hide()
 
   console.log('responseData is', responseData)
