@@ -18,4 +18,9 @@ $(() => {
   $('#showHikeForm').on('submit', hikeEvents.onShowHike)
   $('#updateHikeForm').on('submit', hikeEvents.onUpdateHike)
   $('#deleteHikeForm').on('submit', hikeEvents.onDeleteHike)
+  $('#hikes-display').on(
+    'click',
+    '.hikes-delete-dynamic',
+    hikeEvents.onDynamicDeleteHike
+  )
 })
