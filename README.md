@@ -5,8 +5,7 @@ Calling all nature and hiking enthusiasts! This application allows the user to 1
 ## Important Links ##
 
 [Deployed Client] (https://gargygargz.github.io/switchbacks-client)
-
-## Planning ##
+[Deployed API] (https://warm-wave-34072.herokuapp.com)
 
 ### User Stories ###
 
@@ -16,6 +15,18 @@ Calling all nature and hiking enthusiasts! This application allows the user to 1
 - As a user, I want to create, view, update, and delete hikes I've completed
 - As a user, I want to sign out
 
-### Wireframe ###
+### Technologies Used ###
+
+- Javascript
+- jQuery
+- HTML/CSS
+- Bootstrap
+- MongoDB
+- Mongoose
+- Express
+
+### Wireframe / Entity Relationship Diagram ###
 
 ![Wireframe](./public/switchbacks_wireframe.png/)
+
+[ERD](https://imgur.com/a/iQ1vxq8)
