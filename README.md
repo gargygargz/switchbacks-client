@@ -4,8 +4,8 @@ Calling all nature and hiking enthusiasts! This application allows the user to 1
 
 ## Important Links ##
 
-[Deployed Client] (https://gargygargz.github.io/switchbacks-client)
-[Deployed API] (https://warm-wave-34072.herokuapp.com)
+- [Deployed Client] (https://gargygargz.github.io/switchbacks-client)
+- [Deployed API] (https://warm-wave-34072.herokuapp.com)
 
 ### User Stories ###
 
@@ -29,4 +29,4 @@ Calling all nature and hiking enthusiasts! This application allows the user to 1
 
 ![Wireframe](./public/switchbacks_wireframe.png/)
 
-[ERD](https://imgur.com/a/iQ1vxq8)
+[ERD Link](https://imgur.com/a/iQ1vxq8)
