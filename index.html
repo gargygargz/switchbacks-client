@@ -27,9 +27,9 @@
 
         <!--SIGN UP-->
         <div class="sign-up">
-          <h5> New User? </h5>
+          <h5> New Hiker? </h5>
           <!-- Click on Modal Button -->
-          <button type="button" class="btn btn-primary btn-block" data-bs-toggle="modal" data-bs-target="#signUp">
+          <button type="button" class="btn btn-light btn-block" data-bs-toggle="modal" data-bs-target="#signUp">
             Sign Up Now
           </button>
           <!-- Sign Up Modal -->
@@ -44,7 +44,7 @@
                   <form id="signUpForm">
                     <input type="email" name="credentials[email]" placeholder="Enter Email">
                     <input type="password" name="credentials[password]" placeholder="Enter Password">
-                    <input type="password" name="credentials[password_confirmation]" placeholder="Enter Password Again"><br>
+                    <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password"><br>
                     <button class="btn">Sign Up!</button>
                   </form>
                 </div>
@@ -52,16 +52,17 @@
             </div>
         </div>
         </div>
+        <br>
 
         <!--SIGN IN-->
         <div class="sign-in">
-          <h5> Returning User? </h5>
+          <h5> Return Hiker? </h5>
           <!-- Sign In Modal Button -->
-          <button type="button" class="btn btn-primary btn-block" data-bs-toggle="modal" data-bs-target="#signIn">
+          <button type="button" class="btn btn-light btn-block" data-bs-toggle="modal" data-bs-target="#signIn">
             Sign In Now
           </button>
           <!-- Modal -->
-          <div class="modal fade" id="signIn" tabindex="-1" aria-labelledby="signInLabel" aria-hidden="true">
+          <div class="modal fade" id="signIn" tabindex="-1" aria-labelledby="signInLabel" aria-hidden="true" data-backdrop="false">
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
@@ -88,7 +89,7 @@
         <!--CHANGE PASSWORD-->
         <div class="change-password">
           <!-- Change PW Modal Button -->
-          <button type="button" class="btn btn-primary btn-block" data-bs-toggle="modal" data-bs-target="#changePassword">
+          <button type="button" class="btn btn-light btn-block" data-bs-toggle="modal" data-bs-target="#changePassword">
             Change Password
           </button>
           <!-- Modal -->
@@ -118,24 +119,24 @@
         <!--sign out-->
         <div>
           <form id="sign-out">
-            <button class="btn btn-block">Sign Out!</button>
+            <button class="btn btn-light btn-block">Sign Out!</button>
           </form>
         </div>
 
         <!--Getting all of MY hikes modal-->
         <div class="expand-to-height-of-child">
-          <button class="get-my-hikes btn btn-block">See My Hikes</button>
+          <button class="get-my-hikes btn btn-light btn-block">See My Hikes</button>
         </div>
 
         <!--Getting all hikes modal-->
-        <div class="expand-to-height-of-child">
+        <!-- <div class="expand-to-height-of-child">
           <button class="get-all-hikes btn btn-block">See All Hikes</button>
-        </div>
+        </div> -->
 
         <!--Show Hike-->
         <div class="show-hike">
           <!-- Button trigger modal -->
-          <button type="button" class="btn btn-primary btn-block" data-bs-toggle="modal" data-bs-target="#showHike">
+          <button type="button" class="btn btn-light btn-block" data-bs-toggle="modal" data-bs-target="#showHike">
             Find a Hike
           </button>
 
@@ -164,7 +165,7 @@
         <!--Update Hike-->
         <div class="update-hike">
           <!-- Button trigger modal -->
-          <button type="button" class="btn btn-primary btn-block" data-bs-toggle="modal" data-bs-target="#updateHike">
+          <button type="button" class="btn btn-light btn-block" data-bs-toggle="modal" data-bs-target="#updateHike">
             Update a Hike
           </button>
 
@@ -202,7 +203,7 @@
                     Notes: <input type="text" name="hike[notes]" placeholder="Eg: Amazing views"><br />
                     <br>
                     <br>
-                    <button class="btn" type="submit" id="create-hike-submit">Submit</button>
+                    <button class="btn" type="submit" id="update-hike-submit">Submit</button>
                   </form>
                 </div>
               </div>
@@ -213,7 +214,7 @@
         <!--Delete Hike-->
         <div class="delete-hike">
           <!-- Button trigger modal -->
-          <button type="button" class="btn btn-primary btn-block" data-bs-toggle="modal" data-bs-target="#deleteHike">
+          <button type="button" class="btn btn-light btn-block" data-bs-toggle="modal" data-bs-target="#deleteHike">
             Delete a Hike
           </button>
 
@@ -250,7 +251,7 @@
       <div class="col-9 main">
         <!-- Button trigger modal -->
         <div class="create-hike">
-          <button type="button" class="btn btn-primary btn-block" data-bs-toggle="modal" data-bs-target="#createHike">
+          <button type="button" class="btn btn-light btn-block" data-bs-toggle="modal" data-bs-target="#createHike">
             <strong>Just return from an epic hike? Track your favorite trails here!</strong>
           </button>
           <!-- Modal -->
@@ -288,28 +289,23 @@
               </div>
             </div>
           </div>
-          <!--ends modal-->
+        <!--ends modal-->
         </div>
 
         <div class="background-info">
           <h3>hike</h3>
           <p>/hīk/ <em>noun</em> <br>
           a long walk, especially in the country or wilderness.</p>
-          <p>Track all your trails and hikes with Switchbacks.</p>
-          <p>“Jumping from boulder to boulder and never falling, with a heavy pack, is easier than it sounds; you just can't fall
-          when you get into the rhythm of the dance.” ~ Kerouac</p>
+          <p><em>"I felt like lying down by the side of the trail and remembering it all."</em></p>
+          <p><em>“Jumping from boulder to boulder and never falling, with a heavy pack, is easier than it sounds; you just can't fall when you get into the rhythm of the dance.”</em></p>
+          <p><em>~ Kerouac</em></p>
         </div>
                     <!-- This div will initially be empty, but if an error occurs, 
                                         we will show it here -->
         <div id="error-message2"></div>
                     <!-- This div will initially be empty, but we will display info we got back from the API here -->
         <div id="hikes-display"></div>
-        <section>
-
-        </section>
-          <p></p>
-        </div>
-      </div>
+     </div>
       <!--ends column-->
     </div>
     <!--ends row-->
