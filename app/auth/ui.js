@@ -2,145 +2,69 @@ const store = require('../store')
 
 const onSignUpSuccess = function (responseData) {
   // tell the user it was successful
-  $('#success-message').text('Signed up successfully!')
-  // remove existing classes, then add a green text-success class from bootstrap
-  $('#success-message').removeClass()
-  $('#success-message').addClass('text-success')
-  console.log('responseData is', responseData)
-
-  setTimeout(() => {
-    // remove the message from success-message
-    $('#success-message').html('')
-    // remove the green color caused by `text-success`
-    $('#success-message').removeClass('text-success')
-  }, 5000)
-
+  $('#success-message').text('Signed up successfully!').fadeIn(0, 1)
+  $('#success-message').text('Signed up successfully!').fadeOut(4000, 0)
   // clear (reset) all of the forms
   $('#signUpForm').trigger('reset')
 }
 
-const onSignUpFailure = function (error) {
+const onSignUpFailure = function () {
   // tell the user it was failure
-  $('#error-message').text('Sign up failed, please try again.')
-  // remove existing classes, then add a red text-danger class from bootstrap
-  $('#error-message').removeClass()
-  $('#error-message').addClass('text-danger')
-  // print the error
-  console.error('error is', error)
-
-  setTimeout(() => {
-    // remove the message from error-message
-    $('#error-message').html('')
-    // remove the red color caused by `text-danger`
-    $('#error-message').removeClass('text-danger')
-  }, 5000)
+  $('#error-message').text('Sign up failed, please try again.').fadeIn(0, 1)
+  $('#error-message').text('Sign up failed, please try again.').fadeOut(4000, 0)
+  $('#signUpForm').trigger('reset')
 }
 
 const onSignInSuccess = function (responseData) {
   store.user = responseData.user
-  console.log('store is', store)
   // tell the user it was successful
-  $('#success-message').text('Signed in successfully!')
-  // remove existing classes, then add a green text-success class from bootstrap
-  $('#success-message').removeClass()
-  $('#success-message').addClass('text-success')
+  $('#success-message').text('Signed in successfully!').fadeIn(0, 1)
+  $('#success-message').text('Signed in successfully!').fadeOut(4000, 0)
   $('#sign-out, .change-password, .get-my-hikes, .get-all-hikes, .show-hike, .update-hike, .delete-hike, .create-hike').css('display', 'block')
   $('.sign-up').hide()
+  $('#signIn').hide()
+  $('.sign-in').hide()
+  $('.modal-backdrop').hide()
   // clear (reset) all of the forms
   $('#signInForm').trigger('reset')
 }
 
-const onSignInFailure = function (error) {
+const onSignInFailure = function () {
   // tell the user it was failure
-  $('#error-message').text('Sign in failed, please try again.')
-  // remove existing classes, then add a red text-danger class from bootstrap
-  $('#error-message').removeClass()
-  $('#error-message').addClass('text-danger')
-  // print the error
-  console.error('error is', error)
-
-  setTimeout(() => {
-    // remove the message from error-message
-    $('#error-message').html('')
-    // remove the red color caused by `text-danger`
-    $('#error-message').removeClass('text-danger')
-  }, 5000)
+  $('#error-message').text('Sign in failed, please try again.').fadeIn(0, 1)
+  $('#error-message').text('Sign in failed, please try again.').fadeOut(4000, 0)
+  $('#signInForm').trigger('reset')
 }
 
-const onChangePasswordSuccess = function (responseData) {
+const onChangePasswordSuccess = function () {
   // tell the user it was successful
-  $('#success-message').text('Password changed successfully!')
-  // remove existing classes, then add a green text-success class from bootstrap
-  $('#success-message').removeClass()
-  $('#success-message').addClass('text-success')
-  console.log('responseData is', responseData)
-
-  setTimeout(() => {
-    // remove the message from success-message
-    $('#success-message').html('')
-    // remove the green color caused by `text-success`
-    $('#success-message').removeClass('text-success')
-  }, 5000)
-
+  $('#success-message').text('Password changed successfully!').fadeIn(0, 1)
+  $('#success-message').text('Password changed successfully!').fadeOut(4000, 0)
   // clear (reset) all of the forms
   $('#changePasswordForm').trigger('reset')
 }
 
-const onChangePasswordFailure = function (error) {
+const onChangePasswordFailure = function () {
   // tell the user it was failure
-  $('#error-message').text('Password change failed, please try again.')
-  // remove existing classes, then add a red text-danger class from bootstrap
-  $('#error-message').removeClass()
-  $('#error-message').addClass('text-danger')
-  // print the error
-  console.error('error is', error)
-
-  setTimeout(() => {
-    // remove the message from error-message
-    $('#error-message').html('')
-    // remove the red color caused by `text-danger`
-    $('#error-message').removeClass('text-danger')
-  }, 5000)
+  $('#error-message').text('Password change failed, please try again.').fadeIn(0, 1)
+  $('#error-message').text('Password change failed, please try again.').fadeOut(4000, 0)
+  $('#changePasswordForm').trigger('reset')
 }
 
-const onSignOutSuccess = function (responseData) {
+const onSignOutSuccess = function () {
   // tell the user it was successful
-  $('#success-message').text('Signed out successfully!')
-  // remove existing classes, then add a green text-success class from bootstrap
-  $('#success-message').removeClass()
-  $('#success-message').addClass('text-success')
-  // clear (reset) all of the forms
-  $('#signUpForm, #signInForm, #changePasswordForm, #hike-info, #deleteHikeForm #updateHikeForm, #showHikeForm'
-  ).trigger('reset')
+  $('#success-message').text('Signed out successfully!').fadeIn(0, 1).fadeIn(0, 1)
+  $('#success-message').text('Signed out successfully!').fadeIn(0, 1).fadeOut(4000, 0)
   $('.sign-up, .sign-in, .background-info').show()
-  $(
-    '#sign-out, #hikes-display, .change-password, .get-my-hikes, .get-all-hikes, .show-hike, .update-hike, .delete-hike, .create-hike'
-  ).hide()
-
-  console.log('responseData is', responseData)
-  setTimeout(() => {
-    // remove the message from success-message
-    $('#success-message').html('')
-    // remove the green color caused by `text-success`
-    $('#success-message').removeClass('text-success')
-  }, 5000)
+  $('#sign-out, #hikes-display, .change-password, .get-my-hikes, .get-all-hikes, .show-hike, .update-hike, .delete-hike, .create-hike').hide()
+  // clear (reset) all of the forms
+  $('#signUpForm, #signInForm, #changePasswordForm, #hike-info, #deleteHikeForm #updateHikeForm, #showHikeForm, #sign-out').trigger('reset')
 }
 
-const onSignOutFailure = function (error) {
+const onSignOutFailure = function () {
   // tell the user it was failure
-  $('#error-message').text('Sign out failed, please try again.')
-  // remove existing classes, then add a red text-danger class from bootstrap
-  $('#error-message').removeClass()
-  $('#error-message').addClass('text-danger')
-  // print the error
-  console.error('error is', error)
-
-  setTimeout(() => {
-    // remove the message from error-message
-    $('#error-message').html('')
-    // remove the red color caused by `text-danger`
-    $('#error-message').removeClass('text-danger')
-  }, 5000)
+  $('#error-message').text('Sign out failed, please try again.').fadeIn(0, 1)
+  $('#error-message').text('Sign out failed, please try again.').fadeOut(4000, 0)
 }
 
 module.exports = {

@@ -6,7 +6,6 @@ const onCreateHike = function (event) {
   event.preventDefault()
   const form = event.target
   const formData = getFormFields(form)
-  console.log(formData)
   api
     .createHike(formData)
     .then(ui.onCreateHikeSuccess)
@@ -31,7 +30,6 @@ const onShowHike = function (event) {
   event.preventDefault()
   const form = event.target
   const formData = getFormFields(form)
-  console.log(formData)
   const id = formData.hike.id
   api
     .showHike(id)
@@ -43,7 +41,6 @@ const onUpdateHike = function (event) {
   event.preventDefault()
   const form = event.target
   const formData = getFormFields(form)
-  console.log(formData)
   const id = formData.hike.id
   api
     .updateHike(id, formData)
@@ -55,7 +52,6 @@ const onDeleteHike = function (event) {
   event.preventDefault()
   const form = event.target
   const formData = getFormFields(form)
-  console.log(formData)
   const id = formData.hike.id
   api
     .deleteHike(id)
