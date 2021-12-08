@@ -29,4 +29,4 @@ Calling all nature and hiking enthusiasts! This application allows the user to 1
 
 ![Wireframe](./public/switchbacks_wireframe.png/)
 
-[ERD Link](https://imgur.com/a/iQ1vxq8)
+![ERD](./public/switchbacks_erd.png)
