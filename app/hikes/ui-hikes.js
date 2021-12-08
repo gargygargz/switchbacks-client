@@ -18,6 +18,7 @@ const onCreateHikeSuccess = function (responseData) {
   // set its html to be our hike's html
   $('#hikes-display').html(hikeHtml)
   $('#hike-info').trigger('reset')
+  $('createHike').hide()
   // tell the user it was successful
   $('#success-message').text('Hike created successfully!').fadeIn(0, 1)
   $('#success-message').text('Hike created successfully!').fadeOut(4000, 0)
@@ -158,6 +159,7 @@ const onUpdateHikeSuccess = function () {
   $('#success-message').text('Hike updated successfully').fadeOut(4000, 0)
   $('#updateHikeForm').trigger('reset')
   $('#hikes-display').css('display', 'block')
+  $('updateHike').hide()
   $('.background-info').hide()
 }
 

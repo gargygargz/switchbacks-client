@@ -6,6 +6,7 @@ const onSignUpSuccess = function (responseData) {
   $('#success-message').text('Signed up successfully!').fadeOut(4000, 0)
   // clear (reset) all of the forms
   $('#signUpForm').trigger('reset')
+  $('#signUp').hide()
 }
 
 const onSignUpFailure = function () {
